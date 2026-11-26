@@ -1,0 +1,48 @@
+# =====================================================
+#  StakeV Roleplay - server.cfg mẫu
+#  Copy thành server.cfg rồi điền giá trị thật.
+#  KHÔNG commit server.cfg (đã có trong .gitignore).
+# =====================================================
+
+endpoint_add_tcp "0.0.0.0:30120"
+endpoint_add_udp "0.0.0.0:30120"
+
+sv_hostname "^5StakeV ^7Roleplay | Việt Nam"
+sets sv_projectName "StakeV Roleplay"
+sets sv_projectDesc "Server roleplay GTA V phong cách hiện đại"
+sets locale "vi-VN"
+sets tags "roleplay, vietnam, esx, stakev"
+sv_maxclients 64
+sv_enforceGameBuild 3258
+
+# Key lấy tại https://keymaster.fivem.net
+sv_licenseKey "DIEN_LICENSE_KEY"
+# set steam_webApiKey "DIEN_STEAM_KEY"
+
+# --- Database (oxmysql) ---
+set mysql_connection_string "mysql://root:MATKHAU@127.0.0.1/stakev?charset=utf8mb4"
+set mysql_ui true
+
+# --- Thư viện nền ---
+ensure oxmysql
+ensure ox_lib
+
+# --- Resource mặc định của cfx ---
+ensure mapmanager
+ensure chat
+ensure spawnmanager
+ensure sessionmanager
+ensure hardcap
+
+# --- ESX Legacy (thư mục resources/[esx]) ---
+# es_extended nằm trong [core] và được start trước nhờ dependency
+ensure [core]
+
+# --- StakeV ---
+ensure stakev_core
+ensure stakev_hud
+
+# --- Phân quyền ---
+add_ace group.admin command allow
+add_ace group.admin stakev.admin allow
+# add_principal identifier.license:XXXXXXXX group.admin

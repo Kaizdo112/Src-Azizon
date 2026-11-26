@@ -1,0 +1,59 @@
+:root {
+  --bg: rgba(10, 12, 20, 0.62);
+  --line: rgba(255, 255, 255, 0.08);
+  --text: #f2f4fa;
+  --muted: #9aa3b8;
+  --accent: #ff4fa3;   /* hồng neon logo StakeV */
+  --accent-2: #3ad7ff; /* xanh neon logo StakeV */
+  --health: #ff4d6d;
+  --armor: #3ad7ff;
+  --hunger: #ffb547;
+  --thirst: #4f8bff;
+  --money: #5cf29a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: transparent; font-family: 'Inter', sans-serif; color: var(--text); user-select: none; }
+.hidden { display: none !important; }
+
+.top-right { position: absolute; top: 2.2vh; right: 1.6vw; display: flex; flex-direction: column; align-items: flex-end; gap: .6vh; }
+.brand { display: flex; align-items: center; gap: .8vw; }
+.logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 2.6vh; letter-spacing: .08em;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 8px rgba(255, 79, 163, .45)); }
+.pid { font-size: 1.3vh; color: var(--muted); background: var(--bg); padding: .3vh .6vw; border-radius: 6px; border: 1px solid var(--line); }
+.pid b { color: var(--text); }
+.money { display: flex; align-items: baseline; gap: .7vw; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 2.3vh; text-shadow: 0 2px 6px rgba(0,0,0,.6); }
+.money .label { font-size: 1.1vh; letter-spacing: .15em; color: var(--muted); }
+.money.cash span:last-child { color: var(--money); }
+.job { font-size: 1.3vh; color: var(--muted); background: var(--bg); padding: .4vh .7vw; border-radius: 6px; border-left: 2px solid var(--accent); }
+
+.bottom-left { position: absolute; left: 1.4vw; bottom: 2.4vh; display: flex; flex-direction: column; gap: 1vh; }
+.location { display: flex; align-items: center; gap: .8vw; background: var(--bg); backdrop-filter: blur(6px); border: 1px solid var(--line); border-radius: 10px; padding: .8vh .9vw; }
+.time { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 2.4vh; padding-right: .8vw; border-right: 1px solid var(--line); }
+.street { font-weight: 600; font-size: 1.5vh; }
+.zone { font-size: 1.2vh; color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: .5vw; }
+.stat { display: flex; align-items: center; gap: .4vw; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: .6vh .5vw; min-width: 5vw; }
+.stat i { font-style: normal; font-size: 1.3vh; }
+.bar { flex: 1; height: .6vh; background: rgba(255,255,255,.08); border-radius: 4px; overflow: hidden; }
+.bar span { display: block; height: 100%; width: 100%; border-radius: 4px; transition: width .3s ease; }
+.stat[data-k=health] .bar span { background: var(--health); }
+.stat[data-k=armor] .bar span { background: var(--armor); }
+.stat[data-k=hunger] .bar span { background: var(--hunger); }
+.stat[data-k=thirst] .bar span { background: var(--thirst); }
+.stat.low { animation: pulse 1s infinite; border-color: rgba(255, 77, 109, .6); }
+@keyframes pulse { 50% { opacity: .55; } }
+
+.speedo { position: absolute; right: 2vw; bottom: 3vh; width: 17vh; height: 17vh; }
+.speedo svg { width: 100%; height: 100%; transform: rotate(135deg); }
+.speedo circle { fill: none; stroke-width: 6; stroke-linecap: round; stroke-dasharray: 245 327; }
+.speedo .track { stroke: rgba(255,255,255,.1); }
+.speedo .rpm { stroke: var(--accent-2); transition: stroke-dashoffset .15s linear, stroke .2s; filter: drop-shadow(0 0 4px var(--accent-2)); }
+.speedo .rpm.redline { stroke: var(--accent); filter: drop-shadow(0 0 4px var(--accent)); }
+.speed { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Rajdhani', sans-serif; }
+.speed b { font-size: 4.4vh; line-height: 1; }
+.speed small { font-size: 1.1vh; color: var(--muted); letter-spacing: .2em; }
+.gear { position: absolute; bottom: 2.4vh; width: 100%; text-align: center; font-size: 1.1vh; color: var(--muted); }
+.gear b { color: var(--text); }
+.fuel { position: absolute; bottom: -1.6vh; left: 15%; width: 70%; display: flex; align-items: center; gap: .4vw; font-size: 1.2vh; }
+.fuel .bar span { background: var(--hunger); }

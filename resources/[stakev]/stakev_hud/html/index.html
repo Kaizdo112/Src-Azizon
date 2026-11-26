@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>StakeV HUD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="hud" class="hidden">
+    <!-- Góc trên phải: logo, ID, tiền -->
+    <section class="top-right">
+      <div class="brand"><span class="logo">StakeV</span><span class="pid">ID <b id="pid">0</b></span></div>
+      <div class="money cash"><span class="label">TIỀN MẶT</span><span id="cash">0 $</span></div>
+      <div class="money bank"><span class="label">NGÂN HÀNG</span><span id="bank">0 $</span></div>
+      <div class="job" id="job"></div>
+    </section>
+
+    <!-- Góc dưới trái: vị trí + chỉ số -->
+    <section class="bottom-left">
+      <div class="location">
+        <span class="time" id="time">00:00</span>
+        <div><div class="street" id="street">-</div><div class="zone" id="zone">-</div></div>
+      </div>
+      <div class="stats">
+        <div class="stat" data-k="health"><i>❤</i><div class="bar"><span></span></div></div>
+        <div class="stat" data-k="armor"><i>⛨</i><div class="bar"><span></span></div></div>
+        <div class="stat" data-k="hunger"><i>🍔</i><div class="bar"><span></span></div></div>
+        <div class="stat" data-k="thirst"><i>💧</i><div class="bar"><span></span></div></div>
+      </div>
+    </section>
+
+    <!-- Góc dưới phải: đồng hồ xe -->
+    <section class="speedo hidden" id="speedo">
+      <svg viewBox="0 0 120 120">
+        <circle class="track" cx="60" cy="60" r="52"/>
+        <circle class="rpm" id="rpm" cx="60" cy="60" r="52"/>
+      </svg>
+      <div class="speed"><b id="speed">0</b><small>KM/H</small></div>
+      <div class="gear">GEAR <b id="gear">N</b></div>
+      <div class="fuel"><span>⛽</span><div class="bar"><span id="fuel"></span></div></div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

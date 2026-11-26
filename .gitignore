@@ -1,0 +1,21 @@
+# Bí mật / cấu hình máy chủ thật
+server.cfg
+secrets.cfg
+*.key
+.env
+
+# Dữ liệu runtime FiveM
+cache/
+txData/
+logs/
+*.log
+
+# Dependency tải về (không commit vào repo)
+resources/[esx]/*
+!resources/[esx]/README.md
+resources/[standalone]/*
+!resources/[standalone]/README.md
+
+node_modules/
+.DS_Store
+Thumbs.db
