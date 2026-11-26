@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>StakeV - Tạo nhân vật</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="creator" class="hidden">
+    <form id="form" class="card" autocomplete="off">
+      <header>
+        <div class="logo">StakeV</div>
+        <h1>Tạo nhân vật</h1>
+        <p>Thông tin này hiển thị trên giấy tờ tuỳ thân của bạn và không thể đổi tự do.</p>
+      </header>
+
+      <div class="row">
+        <label>Tên<input name="firstname" placeholder="VD: Minh" required></label>
+        <label>Họ<input name="lastname" placeholder="VD: Nguyen" required></label>
+      </div>
+
+      <label>Ngày sinh<input name="dateofbirth" type="date" required></label>
+
+      <div class="field">
+        <span>Giới tính</span>
+        <div class="seg">
+          <input type="radio" id="sex-m" name="sex" value="m" checked><label for="sex-m">♂ Nam</label>
+          <input type="radio" id="sex-f" name="sex" value="f"><label for="sex-f">♀ Nữ</label>
+        </div>
+      </div>
+
+      <label>Chiều cao <b id="height-val">175 cm</b>
+        <input name="height" type="range" min="150" max="210" value="175">
+      </label>
+
+      <div id="error" class="error"></div>
+      <button type="submit">Tiếp tục <span>→</span></button>
+      <small class="step">Bước 1/3 · Thông tin · Ngoại hình · Điểm xuất hiện</small>
+    </form>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

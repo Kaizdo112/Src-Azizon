@@ -11,8 +11,8 @@ Quy ước: resource tự viết đặt trong `resources/[stakev]/` với tiền
 | Lõi `stakev_core` (hồ sơ, log, quyền admin) | tự viết | ✅ PR này |
 | HUD `stakev_hud` (máu, giáp, đói, khát, tiền, xe) | tự viết, NUI | ✅ PR này |
 | Database `stakev.sql` | tự viết | ✅ PR này |
-| Tạo nhân vật (họ tên, ngày sinh, giới tính, ngoại hình) | `esx_identity` + skin UI tự viết | ⏳ |
-| Màn hình chọn spawn (nhà, tổ chức, điểm cuối) | `stakev_spawn` | ⏳ |
+| Tạo nhân vật (họ tên, ngày sinh, giới tính, chiều cao, ngoại hình) | `stakev_identity` (thay esx_identity) + `esx_skin` | ✅ |
+| Màn hình chọn spawn (vị trí cuối, nhà, điểm công cộng) | `stakev_spawn` | ✅ |
 | Túi đồ | `ox_inventory` (bản mở) | ⏳ |
 | Thông báo, menu, progress bar | `ox_lib` + giao diện StakeV | ⏳ |
 

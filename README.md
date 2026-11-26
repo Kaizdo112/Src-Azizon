@@ -14,6 +14,8 @@ resources/
   [stakev]/               # resource tự viết
     stakev_core/          # hồ sơ người chơi, log, lệnh admin
     stakev_hud/           # HUD giao diện GTA V Modern Premium
+    stakev_identity/      # tạo nhân vật (thay esx_identity)
+    stakev_spawn/         # chọn điểm xuất hiện
 docs/                     # tài liệu
 ```
 

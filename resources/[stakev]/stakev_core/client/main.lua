@@ -1,12 +1,8 @@
 local profile = nil
 
-RegisterNetEvent('stakev:core:profile', function(data, isNew)
+-- Vị trí xuất hiện do stakev_spawn xử lý
+RegisterNetEvent('stakev:core:profile', function(data)
     profile = data
-    if isNew then
-        local p = Config.DefaultSpawn
-        SetEntityCoords(PlayerPedId(), p.x, p.y, p.z, false, false, false, false)
-        SetEntityHeading(PlayerPedId(), p.w)
-    end
 end)
 
 RegisterNetEvent('stakev:core:teleport', function(coords)

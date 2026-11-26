@@ -41,6 +41,8 @@ ensure [core]
 # --- StakeV ---
 ensure stakev_core
 ensure stakev_hud
+ensure stakev_identity
+ensure stakev_spawn
 
 # --- Phân quyền ---
 add_ace group.admin command allow

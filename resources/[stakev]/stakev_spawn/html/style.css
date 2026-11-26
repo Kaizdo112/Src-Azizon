@@ -1,0 +1,35 @@
+:root {
+  --bg: rgba(10, 12, 20, 0.82);
+  --panel: rgba(255, 255, 255, 0.04);
+  --line: rgba(255, 255, 255, 0.09);
+  --text: #f2f4fa;
+  --muted: #9aa3b8;
+  --accent: #ff4fa3;
+  --accent-2: #3ad7ff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: transparent; font-family: 'Inter', sans-serif; color: var(--text); user-select: none; }
+.hidden { display: none !important; }
+
+#spawn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: flex-end; padding-right: 4vw;
+  background: linear-gradient(270deg, rgba(5,6,12,.8) 0%, rgba(5,6,12,.3) 35%, transparent 60%); }
+.panel { width: min(400px, 90vw); display: flex; flex-direction: column; gap: 14px; padding: 26px; background: var(--bg);
+  backdrop-filter: blur(10px); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 20px 60px rgba(0,0,0,.5); animation: in .4s ease; }
+@keyframes in { from { opacity: 0; transform: translateX(20px); } }
+.logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: .1em;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; color: transparent; }
+h1 { font-family: 'Rajdhani', sans-serif; font-size: 32px; font-weight: 700; line-height: 1.1; }
+#hint { color: var(--muted); font-size: 13px; }
+
+#list { list-style: none; display: flex; flex-direction: column; gap: 8px; max-height: 50vh; overflow-y: auto; }
+#list li { display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-radius: 12px; cursor: pointer;
+  background: var(--panel); border: 1px solid var(--line); transition: border-color .2s, background .2s, transform .15s; }
+#list li:hover { transform: translateX(-3px); border-color: rgba(58,215,255,.4); }
+#list li.active { border-color: var(--accent); background: linear-gradient(90deg, rgba(255,79,163,.18), rgba(58,215,255,.1)); }
+.icon { width: 40px; height: 40px; flex: none; display: grid; place-items: center; font-size: 18px; border-radius: 10px; background: rgba(255,255,255,.06); }
+.name { font-weight: 600; font-size: 15px; }
+.desc { color: var(--muted); font-size: 12px; margin-top: 2px; }
+
+button { font: 700 17px 'Rajdhani', sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #fff; border: 0; border-radius: 12px; padding: 14px;
+  cursor: pointer; background: linear-gradient(90deg, var(--accent), #b55cff 55%, var(--accent-2)); box-shadow: 0 8px 24px rgba(255,79,163,.35); transition: filter .2s; }
+button:disabled { filter: grayscale(.8) brightness(.7); cursor: default; box-shadow: none; }
